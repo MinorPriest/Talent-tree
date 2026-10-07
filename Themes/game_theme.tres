@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://cp2q5gmwvaryj"]
+
+[ext_resource type="FontFile" uid="uid://dcnaeuoa3s737" path="res://Assets/Character/assets/fonts/Pixeled.ttf" id="1_3ovl0"]
+
+[resource]
+Label/colors/font_color = Color(1, 1, 0, 1)
+Label/font_sizes/font_size = 5
+Label/fonts/font = ExtResource("1_3ovl0")

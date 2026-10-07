@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://c20rfe3ofgr26"]
+
+[ext_resource type="Texture2D" uid="uid://buridb5cw72ry" path="res://Assets/Talent_6_Normal.png" id="1_cdawa"]
+[ext_resource type="Texture2D" uid="uid://bu504li611etl" path="res://Assets/UI_Star/Cooper1.png" id="4_wa8if"]
+[ext_resource type="Texture2D" uid="uid://xertl0pkha5j" path="res://Assets/UI_Star/Cooper2.png" id="5_t264r"]
+[ext_resource type="Texture2D" uid="uid://cd1ay4i0mqqpp" path="res://Assets/UI_Star/Cooper3.png" id="6_u0k68"]
+[ext_resource type="Texture2D" uid="uid://d25n4hlmhhij7" path="res://Assets/UI_Star/Cooper4.png" id="7_cdawa"]
+[ext_resource type="Texture2D" uid="uid://cp8y8xkgepecc" path="res://Assets/UI_Star/Cooper5.png" id="8_2a5ru"]
+[ext_resource type="Texture2D" uid="uid://rjjap5drwgv5" path="res://Assets/UI_Star/Cooper6.png" id="9_fcot0"]
+[ext_resource type="Texture2D" uid="uid://d0whmywrbgwt3" path="res://Assets/UI_Star/Cooper7.png" id="10_knx8a"]
+[ext_resource type="Texture2D" uid="uid://cv28luek4jll3" path="res://Assets/UI_Star/Cooper8.png" id="11_b77wf"]
+[ext_resource type="Texture2D" uid="uid://cyf7bisterwg0" path="res://Assets/UI_Star/Cooper9.png" id="12_jbrht"]
+[ext_resource type="Texture2D" uid="uid://c6q4ikyvyrnx0" path="res://Assets/UI_Star/Cooper10.png" id="13_8fpcw"]
+[ext_resource type="Texture2D" uid="uid://ckvgujf4ukxpg" path="res://Assets/UI_Star/Cooper11.png" id="14_txf5s"]
+[ext_resource type="Texture2D" uid="uid://ddybstdhtmvyg" path="res://Assets/UI_Star/Cooper12.png" id="15_81bbq"]
+[ext_resource type="Texture2D" uid="uid://be4ybe0wumlfi" path="res://Assets/UI_Star/Cooper13.png" id="16_fv72i"]
+[ext_resource type="Texture2D" uid="uid://ci0m5lm4k07jo" path="res://Assets/UI_Star/Cooper14.png" id="17_dqvr6"]
+[ext_resource type="Texture2D" uid="uid://lbcyl5rrgic4" path="res://Assets/UI_Star/Cooper15.png" id="18_1ssi0"]
+[ext_resource type="Texture2D" uid="uid://cmh2kb0ngj400" path="res://Assets/UI_Star/Cooper16.png" id="19_4h4p8"]
+[ext_resource type="Texture2D" uid="uid://dyindldlakgql" path="res://Assets/UI_Star/Cooper17.png" id="20_coe5t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yd7li"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wa8if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t264r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u0k68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cdawa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2a5ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fcot0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_knx8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b77wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jbrht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8fpcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_txf5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_81bbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fv72i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dqvr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1ssi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4h4p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_coe5t")
+}],
+"loop": 1,
+"name": &"GreenFace",
+"speed": 5.0
+}]
+
+[node name="TalentNode" type="TextureButton" unique_id=974952796]
+focus_mode = 0
+texture_normal = ExtResource("1_cdawa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=281675180]
+z_index = -1
+position = Vector2(35, 37)
+scale = Vector2(0.07, 0.07)
+sprite_frames = SubResource("SpriteFrames_yd7li")
+animation = &"GreenFace"
+autoplay = "GreenFace"
+frame_progress = 0.59431684
+speed_scale = 4.5

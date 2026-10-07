@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bq58kqq7cf2d"]
+
+[ext_resource type="Script" uid="uid://dtt1tiu6fq72s" path="res://Scripts/goal.gd" id="1_2lgk0"]
+[ext_resource type="Texture2D" uid="uid://djru73lns7qqd" path="res://Assets/Character/assets/art/backgrounds/goal-bottom.png" id="1_s0pnd"]
+[ext_resource type="Texture2D" uid="uid://b6rbhvjmqbd2c" path="res://Assets/Character/assets/art/backgrounds/goal-top.png" id="2_2lgk0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd7li"]
+size = Vector2(26, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrekt"]
+size = Vector2(26, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la67b"]
+size = Vector2(6, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olk0q"]
+size = Vector2(30, 60)
+
+[node name="Goal" type="Node2D" unique_id=723445496]
+y_sort_enabled = true
+script = ExtResource("1_2lgk0")
+
+[node name="BottomFrameSprite" type="Sprite2D" parent="." unique_id=1729387968]
+texture = ExtResource("1_s0pnd")
+centered = false
+offset = Vector2(-23, -125)
+
+[node name="TopFrameSprite" type="Sprite2D" parent="." unique_id=885750012]
+position = Vector2(0, -65)
+texture = ExtResource("2_2lgk0")
+centered = false
+offset = Vector2(-23, -59)
+
+[node name="BackNetArea" type="Area2D" parent="." unique_id=287423014]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackNetArea" unique_id=2111425733]
+polygon = PackedVector2Array(-20, -2, -12, -65, -10, -65, -18, -2)
+
+[node name="BottomFrame" type="StaticBody2D" parent="." unique_id=444093383]
+position = Vector2(-3, -1)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomFrame" unique_id=818405753]
+shape = SubResource("RectangleShape2D_yd7li")
+
+[node name="TopFrame" type="StaticBody2D" parent="." unique_id=113140660]
+position = Vector2(7, -67)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopFrame" unique_id=1996233674]
+shape = SubResource("RectangleShape2D_jrekt")
+
+[node name="Targets" type="Node2D" parent="." unique_id=983439640]
+unique_name_in_owner = true
+
+[node name="TopTarget" type="Node2D" parent="Targets" unique_id=510466572]
+position = Vector2(22, -56)
+
+[node name="MiddleTarget" type="Node2D" parent="Targets" unique_id=1285608968]
+position = Vector2(22, -35)
+
+[node name="BottomTarget" type="Node2D" parent="Targets" unique_id=1865656156]
+position = Vector2(22, -14)
+
+[node name="InvisibleWalls" type="StaticBody2D" parent="." unique_id=1654169814]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWalls" unique_id=1925467229]
+position = Vector2(20, -35)
+shape = SubResource("RectangleShape2D_la67b")
+
+[node name="ScoringArea" type="Area2D" parent="." unique_id=164370964]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoringArea" unique_id=1126223501]
+position = Vector2(0, -35)
+shape = SubResource("RectangleShape2D_olk0q")
+debug_color = Color(2.6471912e-06, 0.631781, 0.4619155, 0.41960785)

@@ -1,0 +1,36 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bqhu06c7miq6v"
+path="res://.godot/imported/Soccer Jersey.ttf-0e335946685b6aa9da46af71f7702e62.fontdata"
+
+[deps]
+
+source_file="res://Fonts/soccer_jersey/Soccer Jersey.ttf"
+dest_files=["res://.godot/imported/Soccer Jersey.ttf-0e335946685b6aa9da46af71f7702e62.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+modulate_color_glyphs=false
+hinting=3
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

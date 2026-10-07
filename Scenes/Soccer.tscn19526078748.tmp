@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bp4ruxu7qmksf"]
+
+[ext_resource type="Texture2D" uid="uid://cdhuyrwyurmfe" path="res://Assets/Character/assets/art/backgrounds/pitch-background.png" id="1_fe3rg"]
+[ext_resource type="Texture2D" uid="uid://c02tekekwu3ox" path="res://Assets/Character/assets/art/backgrounds/pitch-pattern.png" id="2_2plm1"]
+[ext_resource type="Texture2D" uid="uid://ij7jc5qfgc0k" path="res://Assets/Character/assets/art/backgrounds/pitch-lines.png" id="3_d4ec1"]
+[ext_resource type="PackedScene" uid="uid://bcqry1jnvwiij" path="res://Scenes/MainCharacter/player.tscn" id="4_2plm1"]
+[ext_resource type="PackedScene" uid="uid://b4fcsbd0h08uo" path="res://Scenes/ball.tscn" id="5_d4ec1"]
+
+[node name="World" type="Node2D" unique_id=2058832650]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=838036318]
+
+[node name="Grass" type="Sprite2D" parent="Node2D" unique_id=1055269541]
+modulate = Color(0.5176471, 0.8039216, 0.16470589, 1)
+texture = ExtResource("1_fe3rg")
+centered = false
+
+[node name="Pattern" type="Sprite2D" parent="Node2D" unique_id=711511216]
+modulate = Color(0.28627452, 0.54509807, 0, 1)
+texture = ExtResource("2_2plm1")
+centered = false
+
+[node name="Lines" type="Sprite2D" parent="Node2D" unique_id=765974810]
+modulate = Color(0.9411765, 0.9411765, 0.9411765, 1)
+texture = ExtResource("3_d4ec1")
+centered = false
+
+[node name="ActorsContainer" type="Node2D" parent="." unique_id=1318723381]
+y_sort_enabled = true
+
+[node name="Player" parent="ActorsContainer" unique_id=424710681 instance=ExtResource("4_2plm1")]
+position = Vector2(109, 109)
+speed = 100.0
+
+[node name="Player2" parent="ActorsContainer" unique_id=321838110 instance=ExtResource("4_2plm1")]
+position = Vector2(76, 159)
+control_scheme = 1
+speed = 100.0
+
+[node name="Player3" parent="ActorsContainer" unique_id=1486568131 instance=ExtResource("4_2plm1")]
+position = Vector2(180, 164)
+control_scheme = 2
+speed = 100.0
+
+[node name="Ball" parent="ActorsContainer" unique_id=540112790 instance=ExtResource("5_d4ec1")]
+position = Vector2(234, 147)
+collision_layer = 0
+collision_mask = 2
+
+[editable path="ActorsContainer/Player"]
+[editable path="ActorsContainer/Player2"]
+[editable path="ActorsContainer/Player3"]

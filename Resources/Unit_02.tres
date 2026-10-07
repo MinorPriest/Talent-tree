@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerData" format=3]
+
+[ext_resource type="Script" path="res://Scripts/player_db.gd" id="1_4lfmw"]
+
+[resource]
+script = ExtResource("1_4lfmw")
+player_id = 1
+player_name = "Unit_02"
+stamina = 7
+speed = 10
+metadata/_custom_type_script = "uid://coeo4gy5gvryx"

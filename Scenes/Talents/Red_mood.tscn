@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://gdeawnxjtx41"]
+
+[ext_resource type="Texture2D" uid="uid://ceddpuc68eo7a" path="res://Assets/UI_Faces/Red/Red1.png" id="1_cwbct"]
+[ext_resource type="Texture2D" uid="uid://bgul523n8xvpo" path="res://Assets/UI_Faces/Red/Red2.png" id="2_yuxqg"]
+[ext_resource type="Texture2D" uid="uid://bwmmpcr0h2pa2" path="res://Assets/UI_Faces/Red/Red3.png" id="3_teios"]
+[ext_resource type="Texture2D" uid="uid://bv61lf1b6vl17" path="res://Assets/UI_Faces/Red/Red4.png" id="4_fphfy"]
+[ext_resource type="Texture2D" uid="uid://dhccru4e03qtt" path="res://Assets/UI_Faces/Red/Red5.png" id="5_77oi5"]
+[ext_resource type="Texture2D" uid="uid://biybfhtelem8o" path="res://Assets/UI_Faces/Red/Red6.png" id="6_wlbwk"]
+[ext_resource type="Texture2D" uid="uid://dxwpwsdnqc7o2" path="res://Assets/UI_Faces/Red/Red7.png" id="7_832k2"]
+[ext_resource type="Texture2D" uid="uid://doch4cqiqcbmr" path="res://Assets/UI_Faces/Red/Red8.png" id="8_ywrj6"]
+[ext_resource type="Texture2D" uid="uid://ccby3cbondjix" path="res://Assets/UI_Faces/Red/Red9.png" id="9_uxfsk"]
+[ext_resource type="Texture2D" uid="uid://gf8lm3uvvjtk" path="res://Assets/UI_Faces/Red/Red10.png" id="10_c0he4"]
+[ext_resource type="Texture2D" uid="uid://0krjapls6n2u" path="res://Assets/UI_Faces/Red/Red11.png" id="11_u5yir"]
+[ext_resource type="Texture2D" uid="uid://b0v0c8p47lsd7" path="res://Assets/UI_Faces/Red/Red12.png" id="12_p04co"]
+[ext_resource type="Texture2D" uid="uid://dm16lftg8ro3p" path="res://Assets/UI_Faces/Red/Red13.png" id="13_wpwnv"]
+[ext_resource type="Texture2D" uid="uid://mbl35pssyqak" path="res://Assets/UI_Faces/Red/Red14.png" id="14_ivfsj"]
+[ext_resource type="Texture2D" uid="uid://d37vmxrbncfuh" path="res://Assets/UI_Faces/Red/Red15.png" id="15_4j5d0"]
+[ext_resource type="Texture2D" uid="uid://ctgmt0in2d0bv" path="res://Assets/UI_Faces/Red/Red16.png" id="16_jo27q"]
+[ext_resource type="Texture2D" uid="uid://cyrl1t4vt6mie" path="res://Assets/UI_Faces/Red/Red17.png" id="17_gp0cn"]
+[ext_resource type="Texture2D" uid="uid://jpobcuo67ffm" path="res://Assets/UI_Faces/Red/Red18.png" id="18_gnon5"]
+[ext_resource type="Texture2D" uid="uid://bfr1irawbb4ww" path="res://Assets/UI_Faces/Red/Red19.png" id="19_syeqs"]
+[ext_resource type="Texture2D" uid="uid://c7vjr08a0aqgo" path="res://Assets/UI_Faces/Red/Red20.png" id="20_q351d"]
+[ext_resource type="Texture2D" uid="uid://b2d34sknceuau" path="res://Assets/UI_Faces/Red/Red21.png" id="21_nt4n5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yd7li"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cwbct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yuxqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_teios")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fphfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_77oi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wlbwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_832k2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ywrj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uxfsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c0he4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u5yir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p04co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wpwnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ivfsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4j5d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jo27q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gp0cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gnon5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_syeqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_q351d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nt4n5")
+}],
+"loop": 1,
+"name": &"Red",
+"speed": 5.0
+}]
+
+[node name="TalentNode" type="Control" unique_id=1899225521]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 256.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1515571756]
+position = Vector2(128, 128)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_yd7li")
+animation = &"Red"
+autoplay = "Red"
+speed_scale = 5.0

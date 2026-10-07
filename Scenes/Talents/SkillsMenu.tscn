@@ -1,0 +1,954 @@
+[gd_scene format=3 uid="uid://yvn7xnuvp1k7"]
+
+[ext_resource type="Texture2D" uid="uid://clmechh0c1d7y" path="res://Assets/TalentName.png" id="1_pvanw"]
+[ext_resource type="FontFile" uid="uid://bqhu06c7miq6v" path="res://Fonts/soccer_jersey/Soccer Jersey.ttf" id="1_t6mdh"]
+[ext_resource type="Script" path="res://Scripts/skillmanager.gd" id="2_tplwg"]
+[ext_resource type="Texture2D" uid="uid://bmkdw8erhqvgh" path="res://Assets/ButtonFrame.png" id="7_nn84j"]
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://Scenes/Sophia/sophia_skin/sophia_skin.tscn" id="8_gg1jg"]
+[ext_resource type="PackedScene" uid="uid://c20rfe3ofgr26" path="res://Scenes/Cooper_node.tscn" id="11_odgfs"]
+[ext_resource type="PackedScene" uid="uid://cooik0bxv0qkh" path="res://Scenes/Silver_node.tscn" id="12_wqfbb"]
+[ext_resource type="PackedScene" uid="uid://bkvj770we1wfl" path="res://Scenes/Gold_node.tscn" id="13_o1j5y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nn84j"]
+sky_top_color = Color(0.51651007, 0.5888966, 0.6314599, 1)
+sky_horizon_color = Color(0.7759755, 0.7941133, 0.8369552, 1)
+ground_bottom_color = Color(0.2243559, 0.47169435, 0.05528132, 1)
+ground_horizon_color = Color(0.8418572, 0.78507936, 0.7134886, 1)
+
+[sub_resource type="Sky" id="Sky_gg1jg"]
+sky_material = SubResource("ProceduralSkyMaterial_nn84j")
+
+[sub_resource type="Environment" id="Environment_tplwg"]
+background_mode = 2
+background_energy_multiplier = 1.1
+sky = SubResource("Sky_gg1jg")
+glow_enabled = true
+
+[node name="UpgradeSkills_UI" type="Control" unique_id=857855346]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PointsManager" type="Node" parent="." unique_id=531237901]
+script = ExtResource("2_tplwg")
+
+[node name="BoxContainer0" type="BoxContainer" parent="." unique_id=1838683424]
+custom_minimum_size = Vector2(808, 0)
+layout_mode = 0
+offset_left = 172.0
+offset_right = 980.0
+offset_bottom = 24.0
+
+[node name="Progress" type="Label" parent="BoxContainer0" unique_id=707223888]
+custom_minimum_size = Vector2(808, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "progress"
+horizontal_alignment = 1
+
+[node name="BoxContainer1" type="BoxContainer" parent="." unique_id=1536365963]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -404.0
+offset_top = 24.0
+offset_right = 404.0
+offset_bottom = 392.0
+grow_horizontal = 2
+offset_transform_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer1" unique_id=295816149]
+propagate_maximum_size = false
+layout_mode = 2
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="BoxContainer1/VBoxContainer" unique_id=2042502778]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2" unique_id=1955397134]
+layout_mode = 2
+
+[node name="Stamina" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1620531672]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Stamina" unique_id=1069182353]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="Label" type="Label" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Stamina/TextureRect" unique_id=410847838]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -11.5
+offset_right = 32.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "Stamina"
+
+[node name="Power" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1199025170]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Power" unique_id=1733511587]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="Label" type="Label" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Power/TextureRect" unique_id=1136572113]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -37.5
+offset_right = 24.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "
+Power
+"
+
+[node name="Speed" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1948614900]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Speed" unique_id=454748524]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="Label" type="Label" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Speed/TextureRect" unique_id=128320387]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -37.5
+offset_right = 24.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "
+Speed
+"
+
+[node name="Agility" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1243891104]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Agility" unique_id=1155992154]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="Label" type="Label" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Agility/TextureRect" unique_id=1609533345]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -37.5
+offset_right = 24.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "
+Agility
+"
+
+[node name="Defense" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1747466144]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Defense" unique_id=1664933357]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="Label" type="Label" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer/Defense/TextureRect" unique_id=285974089]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -37.5
+offset_right = 32.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "
+Defense
+"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2" unique_id=1331740735]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="HBoxCont_Stamina" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=166786597]
+layout_mode = 2
+
+[node name="TalentNode" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=974952796 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode2" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=1001620072 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode3" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=1413264211 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode4" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=1444922463 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode5" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=497206626 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode6" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=448781293 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode7" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=870163641 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode8" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=454303853 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode9" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=440740888 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="TalentNode10" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Stamina" unique_id=336393690 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="HBoxCont_Power" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=1653457969]
+layout_mode = 2
+
+[node name="TalentNode" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=261943142 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode2" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=635636272 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode3" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=1399541758 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode4" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=665892129 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode5" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=673335989 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode6" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=1724214915 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode7" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=908016187 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode8" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=590238507 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode9" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=1648147942 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="TalentNode10" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Power" unique_id=465085876 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="HBoxCont_Speed" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=474704449]
+layout_mode = 2
+
+[node name="TalentNode" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=1326422530 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode2" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=852080458 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode3" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=1528832470 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode4" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=985230206 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode5" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=1302707793 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode6" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=1431139993 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode7" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=714239895 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode8" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=840811768 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode9" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=45459123 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="TalentNode10" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Speed" unique_id=284071799 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="HBoxCont_Agility" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=1463832263]
+layout_mode = 2
+
+[node name="TalentNode" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=224063168 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode2" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=2090415769 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode3" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=930501988 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode4" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=115636470 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode5" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=291467050 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode6" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=2107781644 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode7" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=72017700 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode8" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=1619727458 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode9" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=1006411008 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="TalentNode10" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Agility" unique_id=483856364 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="HBoxCont_Defense" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=610628984]
+layout_mode = 2
+
+[node name="TalentNode" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=850257833 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode2" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=106886844 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode3" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=729475979 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode4" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=884123240 instance=ExtResource("11_odgfs")]
+layout_mode = 2
+
+[node name="TalentNode5" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=655913212 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode6" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=630622435 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode7" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=832601915 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode8" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=560810722 instance=ExtResource("12_wqfbb")]
+layout_mode = 2
+
+[node name="TalentNode9" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=1507146176 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="TalentNode10" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxCont_Defense" unique_id=1853786499 instance=ExtResource("13_o1j5y")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BoxContainer1/VBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=48898805]
+layout_mode = 2
+
+[node name="BoxContainer2" type="BoxContainer" parent="." unique_id=69297415]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -404.0
+offset_top = -274.0
+offset_right = 404.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer2" unique_id=2057926493]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer2/HBoxContainer" unique_id=871679979]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="BoxContainer2/HBoxContainer/VBoxContainer" unique_id=985430200]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="BoxContainer2/HBoxContainer/VBoxContainer/SubViewportContainer" unique_id=177806833]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(172, 240)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="BoxContainer2/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport" unique_id=160590678]
+
+[node name="SophiaSkin" parent="BoxContainer2/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport/Node3D" unique_id=71180830 instance=ExtResource("8_gg1jg")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="BoxContainer2/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport/Node3D" unique_id=176913514]
+environment = SubResource("Environment_tplwg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="BoxContainer2/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport/Node3D" unique_id=1227321683]
+transform = Transform3D(-0.8660254, -0.50000006, -2.1855696e-08, 0, -4.371139e-08, 1, -0.50000006, 0.8660254, 3.7855173e-08, 0, 0, 0)
+light_color = Color(0.86131346, 0.53283453, 0.10541602, 1)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="BoxContainer2/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport/Node3D" unique_id=1564189103]
+transform = Transform3D(0.8188592, 0.12363655, -0.5605208, 0, 0.9765266, 0.21539679, 0.5739944, -0.17637965, 0.7996378, -1.9302399, 1.5686889, 2.3365908)
+
+[node name="TeamName" type="Label" parent="BoxContainer2/HBoxContainer/VBoxContainer" unique_id=1294367189]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "                     TeamName                 "
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BoxContainer2/HBoxContainer" unique_id=1404371507]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Name" type="Label" parent="BoxContainer2/HBoxContainer/VBoxContainer2" unique_id=1230065379]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "Name:"
+
+[node name="Aviables_points" type="Label" parent="BoxContainer2/HBoxContainer/VBoxContainer2" unique_id=1163870549]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "Aviables_points: "
+
+[node name="Overall" type="Label" parent="BoxContainer2/HBoxContainer/VBoxContainer2" unique_id=1141780087]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "Overall: 000"
+
+[node name="Contract" type="Label" parent="BoxContainer2/HBoxContainer/VBoxContainer2" unique_id=270317359]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "Contract: "
+
+[node name="Goals" type="Label" parent="BoxContainer2/HBoxContainer/VBoxContainer2" unique_id=324365815]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "Goals:  0000"
+
+[node name="Assistances" type="Label" parent="BoxContainer2/HBoxContainer/VBoxContainer2" unique_id=1451469530]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "Assistances: 0000"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BoxContainer2" unique_id=1427153347]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer3" type="BoxContainer" parent="." unique_id=2008219744]
+layout_mode = 0
+offset_left = 1000.0
+offset_right = 1128.0
+offset_bottom = 226.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer3" unique_id=1251581668]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BoxContainer3/VBoxContainer" unique_id=888051262]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "Summary"
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer3/VBoxContainer" unique_id=2093292522]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="StaminaSummary" type="Label" parent="BoxContainer3/VBoxContainer/TextureRect" unique_id=1389997167]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -11.5
+offset_right = 21.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "1 / 10"
+
+[node name="TextureRect2" type="TextureRect" parent="BoxContainer3/VBoxContainer" unique_id=480341023]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="PowerSummary" type="Label" parent="BoxContainer3/VBoxContainer/TextureRect2" unique_id=204081539]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -11.5
+offset_right = 21.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "1 / 10"
+
+[node name="TextureRect3" type="TextureRect" parent="BoxContainer3/VBoxContainer" unique_id=1428639571]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="SpeedSummary" type="Label" parent="BoxContainer3/VBoxContainer/TextureRect3" unique_id=131126156]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -11.5
+offset_right = 21.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "1 / 10"
+
+[node name="TextureRect4" type="TextureRect" parent="BoxContainer3/VBoxContainer" unique_id=1546301498]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="AgilitySummary" type="Label" parent="BoxContainer3/VBoxContainer/TextureRect4" unique_id=2131605197]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -11.5
+offset_right = 21.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "1 / 10"
+
+[node name="TextureRect5" type="TextureRect" parent="BoxContainer3/VBoxContainer" unique_id=688530475]
+layout_mode = 2
+texture = ExtResource("1_pvanw")
+
+[node name="DefenseSummary" type="Label" parent="BoxContainer3/VBoxContainer/TextureRect5" unique_id=1819720639]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -11.5
+offset_right = 21.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "1 / 10"
+
+[node name="BoxContainer4" type="BoxContainer" parent="." unique_id=334831831]
+layout_mode = 0
+offset_left = 31.0
+offset_right = 163.0
+offset_bottom = 368.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer4" unique_id=1781809929]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer4/VBoxContainer" unique_id=886113217]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer" unique_id=2097633428]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "UPGRADE"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BoxContainer4/VBoxContainer" unique_id=1282933509]
+layout_mode = 2
+
+[node name="UpStamina" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer2" unique_id=1178387347]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer2/UpStamina" unique_id=1213034927]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 7.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "UP"
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer2/UpStamina" unique_id=753000143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DownStamina" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer2" unique_id=1323557774]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label2" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer2/DownStamina" unique_id=593472352]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -12.0
+offset_right = 16.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "DOWN"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer2/DownStamina" unique_id=1564804998]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="BoxContainer4/VBoxContainer" unique_id=274820650]
+layout_mode = 2
+
+[node name="UpPower" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer3" unique_id=167944130]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer3/UpPower" unique_id=499390154]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 7.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "UP"
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer3/UpPower" unique_id=1723662280]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DownPower" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer3" unique_id=1082598040]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label2" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer3/DownPower" unique_id=2085244982]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -12.0
+offset_right = 16.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "DOWN"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer3/DownPower" unique_id=1684491450]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="BoxContainer4/VBoxContainer" unique_id=892695653]
+layout_mode = 2
+
+[node name="UpSpeed" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer4" unique_id=59221642]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer4/UpSpeed" unique_id=1203254748]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 7.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "UP"
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer4/UpSpeed" unique_id=202256788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DownSpeed" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer4" unique_id=380291204]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label2" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer4/DownSpeed" unique_id=1508449579]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -12.0
+offset_right = 16.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "DOWN"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer4/DownSpeed" unique_id=1868509995]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="BoxContainer4/VBoxContainer" unique_id=934062234]
+layout_mode = 2
+
+[node name="UpAgility" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer5" unique_id=668300147]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer5/UpAgility" unique_id=319681900]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 7.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "UP"
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer5/UpAgility" unique_id=1248536763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DownAgility" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer5" unique_id=229474059]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label2" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer5/DownAgility" unique_id=244971937]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -12.0
+offset_right = 16.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "DOWN"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer5/DownAgility" unique_id=1783565972]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="BoxContainer4/VBoxContainer" unique_id=1509388052]
+layout_mode = 2
+
+[node name="UpDefense" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer6" unique_id=212311664]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer6/UpDefense" unique_id=776472770]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 7.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "UP"
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer6/UpDefense" unique_id=1429397419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DownDefense" type="TextureRect" parent="BoxContainer4/VBoxContainer/HBoxContainer6" unique_id=329272388]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_nn84j")
+
+[node name="Label2" type="Label" parent="BoxContainer4/VBoxContainer/HBoxContainer6/DownDefense" unique_id=19844823]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -12.0
+offset_right = 16.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "DOWN"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="BoxContainer4/VBoxContainer/HBoxContainer6/DownDefense" unique_id=1944561638]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer5" type="BoxContainer" parent="." unique_id=789985144]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 376.0
+offset_right = 1128.0
+offset_bottom = 644.0
+
+[node name="Button" type="Button" parent="BoxContainer5" unique_id=1602590545]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "SAVE"
+
+[node name="BoxContainer6" type="BoxContainer" parent="." unique_id=1067211999]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 376.0
+offset_right = 162.0
+offset_bottom = 644.0
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="BoxContainer6" unique_id=1406780261]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="BoxContainer6/HBoxContainer6" unique_id=492340561]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "PREV"
+
+[node name="Button2" type="Button" parent="BoxContainer6/HBoxContainer6" unique_id=1720041635]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_t6mdh")
+text = "NEXT"

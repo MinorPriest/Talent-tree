@@ -1,0 +1,541 @@
+[gd_scene format=3 uid="uid://bcqry1jnvwiij"]
+
+[ext_resource type="Texture2D" uid="uid://dqg35a5tpejkt" path="res://Assets/Character/assets/art/characters/soccer-player.png" id="1_u0jlk"]
+[ext_resource type="Script" uid="uid://d0ejpwwibl7oq" path="res://Scripts/player_character.gd" id="1_xp4j4"]
+[ext_resource type="Shader" uid="uid://dpes7p763sre1" path="res://Shaders/replace_color.gdshader" id="2_hi150"]
+[ext_resource type="Texture2D" uid="uid://cp1t4vfysg4d5" path="res://Assets/Character/assets/art/particles/white-circle.png" id="2_htfu4"]
+[ext_resource type="Texture2D" uid="uid://c678cufsnssvo" path="res://Assets/Character/assets/art/palettes/teams-color-palette.png" id="3_6qrap"]
+[ext_resource type="Texture2D" uid="uid://2glbrlr5tr8e" path="res://Assets/Character/assets/art/palettes/skin-colors-palette.png" id="3_htfu4"]
+[ext_resource type="Texture2D" uid="uid://b3l8yyw4gph6m" path="res://Assets/Character/assets/art/props/1p.png" id="3_jm07g"]
+[ext_resource type="Texture2D" uid="uid://vosql5g6ww48" path="res://Assets/Character/assets/art/characters/player-shadow.png" id="3_usn5p"]
+
+[sub_resource type="Curve" id="Curve_3ljxf"]
+_data = [Vector2(0, 0.44943827), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_la67b"]
+curve = SubResource("Curve_3ljxf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yd7li"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, -80, 0)
+scale_min = 0.29999998
+scale_max = 0.79999995
+scale_curve = SubResource("CurveTexture_la67b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67kuy"]
+resource_local_to_scene = true
+shader = ExtResource("2_hi150")
+shader_parameter/skin_palette = ExtResource("3_htfu4")
+shader_parameter/team_palette = ExtResource("3_6qrap")
+shader_parameter/skin_color = 0
+shader_parameter/team_color = 0
+
+[sub_resource type="Animation" id="Animation_htfu4"]
+resource_name = "Bicycle_Kick"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [36, 37, 38, 39]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_animation_complete"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_lb3lm"]
+resource_name = "Celebrate"
+length = 4.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(nan, 0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [24, 24, 18, 24]
+}
+
+[sub_resource type="Animation" id="Animation_xbbls"]
+resource_name = "Chest_Control"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [42]
+}
+
+[sub_resource type="Animation" id="Animation_853yi"]
+resource_name = "Dash"
+length = 0.39999999999999997
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [9, 9, 10, 24]
+}
+
+[sub_resource type="Animation" id="Animation_7tgwc"]
+resource_name = "Dive_Down"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [72]
+}
+
+[sub_resource type="Animation" id="Animation_4lhki"]
+resource_name = "Dive_Up"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [66]
+}
+
+[sub_resource type="Animation" id="Animation_3ljxf"]
+resource_name = "Header"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [24, 25]
+}
+
+[sub_resource type="Animation" id="Animation_14rij"]
+resource_name = "Hurt"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [54, 55]
+}
+
+[sub_resource type="Animation" id="Animation_xp4j4"]
+resource_name = "Idle"
+length = 0.6
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_6qrap"]
+resource_name = "Kick"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [49, 50, 51]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_animation_complete"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_vosdj"]
+resource_name = "Mourn"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [18]
+}
+
+[sub_resource type="Animation" id="Animation_hi150"]
+resource_name = "Prep_Kick"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [48]
+}
+
+[sub_resource type="Animation" id="Animation_usn5p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ga303"]
+resource_name = "Recover"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [18]
+}
+
+[sub_resource type="Animation" id="Animation_u0jlk"]
+resource_name = "Run"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_jm07g"]
+resource_name = "Tackle"
+length = 0.001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [30]
+}
+
+[sub_resource type="Animation" id="Animation_t06ds"]
+resource_name = "Volley_Kick"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [49, 50]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_animation_complete"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0engj"]
+resource_name = "Walk"
+length = 0.9
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14285715, 0.2857143, 0.42857146, 0.5714286, 0.71428573),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jm07g"]
+_data = {
+&"Bicycle_Kick": SubResource("Animation_htfu4"),
+&"Celebrate": SubResource("Animation_lb3lm"),
+&"Chest_Control": SubResource("Animation_xbbls"),
+&"Dash": SubResource("Animation_853yi"),
+&"Dive_Down": SubResource("Animation_7tgwc"),
+&"Dive_Up": SubResource("Animation_4lhki"),
+&"Header": SubResource("Animation_3ljxf"),
+&"Hurt": SubResource("Animation_14rij"),
+&"Idle": SubResource("Animation_xp4j4"),
+&"Kick": SubResource("Animation_6qrap"),
+&"Mourn": SubResource("Animation_vosdj"),
+&"Prep_Kick": SubResource("Animation_hi150"),
+&"RESET": SubResource("Animation_usn5p"),
+&"Recover": SubResource("Animation_ga303"),
+&"Run": SubResource("Animation_u0jlk"),
+&"Tackle": SubResource("Animation_jm07g"),
+&"Volley_Kick": SubResource("Animation_t06ds"),
+&"Walk": SubResource("Animation_0engj")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_itowg"]
+radius = 4.0
+height = 18.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yd7li"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qrap"]
+size = Vector2(7, 7)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jrekt"]
+radius = 40.0
+height = 120.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd7li"]
+size = Vector2(7, 7)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_la67b"]
+radius = 3.0
+height = 18.0
+
+[node name="Player" type="CharacterBody2D" unique_id=424710681]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_xp4j4")
+power = 150.0
+speed = 1.0
+
+[node name="RootParticles" type="Node2D" parent="." unique_id=1036792340]
+
+[node name="RunParticles" type="GPUParticles2D" parent="RootParticles" unique_id=1461070404]
+position = Vector2(-5, 0)
+texture = ExtResource("2_htfu4")
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_yd7li")
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1159998808]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_67kuy")
+texture = ExtResource("1_u0jlk")
+centered = false
+offset = Vector2(-16, -32)
+hframes = 6
+vframes = 13
+
+[node name="ControlSprite" type="Sprite2D" parent="PlayerSprite" unique_id=1722813923]
+unique_name_in_owner = true
+position = Vector2(0, -35)
+texture = ExtResource("3_jm07g")
+centered = false
+offset = Vector2(-7, -6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=788240055]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_jm07g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1469968874]
+position = Vector2(0, -3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_itowg")
+debug_color = Color(0.93525296, 2.1947622e-05, 0.6481803, 0.41960785)
+
+[node name="TeammateDetectionArea" type="Area2D" parent="." unique_id=749858559]
+unique_name_in_owner = true
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TeammateDetectionArea" unique_id=1540308228]
+polygon = PackedVector2Array(0, -40, 280, -150, 330, -100, 330, 100, 280, 150, 0, 40)
+
+[node name="ShadowSprite" type="Sprite2D" parent="." unique_id=1550874996]
+texture = ExtResource("3_usn5p")
+centered = false
+offset = Vector2(-8, -15)
+
+[node name="BallDetectionArea" type="Area2D" parent="." unique_id=1689019913]
+unique_name_in_owner = true
+position = Vector2(0, -8)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallDetectionArea" unique_id=249415289]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yd7li")
+
+[node name="TackleDamageEmitterArea" type="Area2D" parent="." unique_id=585650938]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TackleDamageEmitterArea" unique_id=2052365961]
+position = Vector2(13, -3)
+shape = SubResource("RectangleShape2D_6qrap")
+debug_color = Color(0.6938552, 0.4962833, 0, 0.41960785)
+
+[node name="OpponentDetectionArea" type="Area2D" parent="." unique_id=894918409]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpponentDetectionArea" unique_id=1200816148]
+position = Vector2(20, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_jrekt")
+debug_color = Color(0.51520056, 0.54077697, 0.5547978, 0.41960785)
+
+[node name="PermanentDamageEmitterArea" type="Area2D" parent="." unique_id=2036019262]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PermanentDamageEmitterArea" unique_id=165460089]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_yd7li")
+debug_color = Color(0.99202555, 0, 0.2639284, 0.41960785)
+
+[node name="GoalieHands" type="AnimatableBody2D" parent="." unique_id=264869862]
+collision_layer = 32
+collision_mask = 0
+sync_to_physics = false
+
+[node name="GoalieHandsCollider" type="CollisionShape2D" parent="GoalieHands" unique_id=634481205]
+unique_name_in_owner = true
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_la67b")
+debug_color = Color(0.54099697, 0.56754816, 0, 0.41960785)

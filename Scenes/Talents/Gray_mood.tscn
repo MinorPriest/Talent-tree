@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://h3v6msbmr5gh"]
+
+[ext_resource type="Texture2D" uid="uid://d1aji5vdf4w6i" path="res://Assets/UI_Faces/Gray/Gray1.png" id="1_bybg8"]
+[ext_resource type="Texture2D" uid="uid://buridb5cw72ry" path="res://Assets/Talent_6_Normal.png" id="1_ro2ne"]
+[ext_resource type="Texture2D" uid="uid://bibt1dfku0dst" path="res://Assets/UI_Faces/Gray/Gray2.png" id="2_jisft"]
+[ext_resource type="Texture2D" uid="uid://ces70mr2f3l78" path="res://Assets/UI_Faces/Gray/Gray3.png" id="3_assjs"]
+[ext_resource type="Texture2D" uid="uid://buhi6olf028gf" path="res://Assets/UI_Faces/Gray/Gray4.png" id="4_3r7ks"]
+[ext_resource type="Texture2D" uid="uid://cctd8qbiqpkgb" path="res://Assets/UI_Faces/Gray/Gray5.png" id="5_lroih"]
+[ext_resource type="Texture2D" uid="uid://dledrwdw27ub2" path="res://Assets/UI_Faces/Gray/Gray6.png" id="6_da7af"]
+[ext_resource type="Texture2D" uid="uid://cyiorl8ptvvb1" path="res://Assets/UI_Faces/Gray/Gray7.png" id="7_3ar0x"]
+[ext_resource type="Texture2D" uid="uid://bidc0bj01fpv6" path="res://Assets/UI_Faces/Gray/Gray8.png" id="8_hbh3h"]
+[ext_resource type="Texture2D" uid="uid://dgauifvy03heh" path="res://Assets/UI_Faces/Gray/Gray9.png" id="9_xw72m"]
+[ext_resource type="Texture2D" uid="uid://d1ruqayv87d0c" path="res://Assets/UI_Faces/Gray/Gray10.png" id="10_8wctp"]
+[ext_resource type="Texture2D" uid="uid://2aodtv5g44tj" path="res://Assets/UI_Faces/Gray/Gray11.png" id="11_g1erq"]
+[ext_resource type="Texture2D" uid="uid://d4bxksfr1rstg" path="res://Assets/UI_Faces/Gray/Gray12.png" id="12_jidgm"]
+[ext_resource type="Texture2D" uid="uid://btu6adlhx2c8e" path="res://Assets/UI_Faces/Gray/Gray13.png" id="13_su6rq"]
+[ext_resource type="Texture2D" uid="uid://bnskjgdtt0hh8" path="res://Assets/UI_Faces/Gray/Gray14.png" id="14_2ftnj"]
+[ext_resource type="Texture2D" uid="uid://dd7abxm7srvqu" path="res://Assets/UI_Faces/Gray/Gray15.png" id="15_blth6"]
+[ext_resource type="Texture2D" uid="uid://css2li42j8ou4" path="res://Assets/UI_Faces/Gray/Gray16.png" id="16_d83e5"]
+[ext_resource type="Texture2D" uid="uid://dhjgf4vdwp1n2" path="res://Assets/UI_Faces/Gray/Gray17.png" id="17_mcrs5"]
+[ext_resource type="Texture2D" uid="uid://bm1wvevwgydfq" path="res://Assets/UI_Faces/Gray/Gray18.png" id="18_tfedy"]
+[ext_resource type="Texture2D" uid="uid://cgx4k3q7p8mdm" path="res://Assets/UI_Faces/Gray/Gray19.png" id="19_oywal"]
+[ext_resource type="Texture2D" uid="uid://c5ftlsx2bn0d" path="res://Assets/UI_Faces/Gray/Gray20.png" id="20_nhsp1"]
+[ext_resource type="Texture2D" uid="uid://e0mi43rrtk1r" path="res://Assets/UI_Faces/Gray/Gray21.png" id="21_ew2f5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yd7li"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bybg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jisft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_assjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3r7ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lroih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_da7af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3ar0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hbh3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xw72m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8wctp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g1erq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jidgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_su6rq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2ftnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_blth6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_d83e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mcrs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tfedy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_oywal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nhsp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ew2f5")
+}],
+"loop": 1,
+"name": &"Gray",
+"speed": 5.0
+}]
+
+[node name="GrayMood" type="TextureButton" unique_id=1044983829]
+offset_right = 256.0
+offset_bottom = 256.0
+texture_normal = ExtResource("1_ro2ne")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1695160602]
+z_index = -1
+position = Vector2(128, 128)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_yd7li")
+animation = &"Gray"
+autoplay = "Gray"
+speed_scale = 1.5

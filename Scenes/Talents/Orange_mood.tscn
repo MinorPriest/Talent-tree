@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://b8erfedlf0rt6"]
+
+[ext_resource type="Texture2D" uid="uid://nqpex1ci4wwx" path="res://Assets/UI_Faces/Orange/Orange1.png" id="1_e2b0s"]
+[ext_resource type="Texture2D" uid="uid://biqaxs3gb60u0" path="res://Assets/UI_Faces/Orange/Orange2.png" id="2_aueqi"]
+[ext_resource type="Texture2D" uid="uid://b50wsa2agxel8" path="res://Assets/UI_Faces/Orange/Orange3.png" id="3_0ffvw"]
+[ext_resource type="Texture2D" uid="uid://b2e6mgiv3mv0a" path="res://Assets/UI_Faces/Orange/Orange4.png" id="4_k2fs5"]
+[ext_resource type="Texture2D" uid="uid://ln3lamo8dua4" path="res://Assets/UI_Faces/Orange/Orange5.png" id="5_rsg7f"]
+[ext_resource type="Texture2D" uid="uid://feemr12qndf6" path="res://Assets/UI_Faces/Orange/Orange6.png" id="6_n8mcj"]
+[ext_resource type="Texture2D" uid="uid://btrvbr2cfcaqm" path="res://Assets/UI_Faces/Orange/Orange7.png" id="7_8ays6"]
+[ext_resource type="Texture2D" uid="uid://cn11xul6kbyrl" path="res://Assets/UI_Faces/Orange/Orange8.png" id="8_contt"]
+[ext_resource type="Texture2D" uid="uid://cnr2gid2lj1ht" path="res://Assets/UI_Faces/Orange/Orange9.png" id="9_plgox"]
+[ext_resource type="Texture2D" uid="uid://cxps10vu2b7rp" path="res://Assets/UI_Faces/Orange/Orange10.png" id="10_ov28u"]
+[ext_resource type="Texture2D" uid="uid://brhtfbtn6bdku" path="res://Assets/UI_Faces/Orange/Orange11.png" id="11_1t2yi"]
+[ext_resource type="Texture2D" uid="uid://b0rdnko36c80x" path="res://Assets/UI_Faces/Orange/Orange12.png" id="12_qdwv1"]
+[ext_resource type="Texture2D" uid="uid://t0y26bmkrhkc" path="res://Assets/UI_Faces/Orange/Orange13.png" id="13_wiirb"]
+[ext_resource type="Texture2D" uid="uid://bdr7vilmptlox" path="res://Assets/UI_Faces/Orange/Orange14.png" id="14_oxafd"]
+[ext_resource type="Texture2D" uid="uid://pr3o2wpj8ss" path="res://Assets/UI_Faces/Orange/Orange15.png" id="15_fwlpa"]
+[ext_resource type="Texture2D" uid="uid://ctlxq0usb6ps2" path="res://Assets/UI_Faces/Orange/Orange16.png" id="16_p3ith"]
+[ext_resource type="Texture2D" uid="uid://ty0r1pn63e7y" path="res://Assets/UI_Faces/Orange/Orange17.png" id="17_vh07e"]
+[ext_resource type="Texture2D" uid="uid://dc6yucmgx6abn" path="res://Assets/UI_Faces/Orange/Orange18.png" id="18_ftj6b"]
+[ext_resource type="Texture2D" uid="uid://djmgl1nauwerh" path="res://Assets/UI_Faces/Orange/Orange19.png" id="19_nrpln"]
+[ext_resource type="Texture2D" uid="uid://bhxsa5nlmnagt" path="res://Assets/UI_Faces/Orange/Orange20.png" id="20_ya0a6"]
+[ext_resource type="Texture2D" uid="uid://btbueeoh6vulv" path="res://Assets/UI_Faces/Orange/Orange21.png" id="21_cwvbg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yd7li"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e2b0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aueqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0ffvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k2fs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rsg7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n8mcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8ays6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_contt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_plgox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ov28u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1t2yi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qdwv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wiirb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_oxafd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fwlpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p3ith")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vh07e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ftj6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nrpln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ya0a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_cwvbg")
+}],
+"loop": 1,
+"name": &"Orange",
+"speed": 5.0
+}]
+
+[node name="TalentNode" type="Control" unique_id=1645036289]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 256.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=105006862]
+position = Vector2(128, 128)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_yd7li")
+animation = &"Orange"
+autoplay = "Orange"
+speed_scale = 2.5
